@@ -10,6 +10,55 @@
     <link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     
+    <style>
+      /* Logout button styling */
+      .logout-button {
+        background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+      }
+      
+      .logout-button:hover {
+        background: linear-gradient(135deg, #ee5a24, #ff6b6b);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+      }
+      
+      .logout-button:active {
+        transform: translateY(0);
+      }
+      
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .logout-button {
+          padding: 8px 16px;
+          font-size: 12px;
+        }
+      }
+      
+      /* Ensure proper spacing between buttons */
+      .uyuyu {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+      
+      /* Hide login button initially */
+      #login-btn {
+        display: none;
+      }
+    </style>
+    
     <title>OcuTech</title>
 </head>
 <body>
@@ -37,6 +86,12 @@
             </div>
             <div class="uyuyu">
 
+                <div id="login-btn" class="sign-up" style="display: none;">
+                <div class="button">
+                  <a href="/login/login.html" class="span">Login</a>
+                </div>
+              </div>
+
                 <div id="signup-btn" class="sign-up">
                 <div class="button">
                   <a href="/signup/signup.html" class="span">Sign Up!</a>
@@ -55,6 +110,11 @@
                 </a>
               </div>
               
+              <div id="logout-btn" style="display: none;">
+                <button onclick="logout()" class="logout-button">
+                  <i class="fa-solid fa-sign-out-alt"></i> Logout
+                </button>
+              </div>
 
             </div>
 
@@ -1189,6 +1249,62 @@
       origin: 'bottom',
       easing: 'ease-in-out',
       interval: 100
+  });
+
+  // Authentication state management
+  function checkAuthState() {
+    const token = localStorage.getItem('token');
+    const isAdmin = localStorage.getItem('isAdmin') === 'true';
+    
+    const loginBtn = document.getElementById('login-btn');
+    const signupBtn = document.getElementById('signup-btn');
+    const adminDashboardLink = document.getElementById('admin-dashboard-link');
+    const logoutBtn = document.getElementById('logout-btn');
+    
+    if (token) {
+      // User is logged in
+      loginBtn.style.display = 'none';
+      signupBtn.style.display = 'none';
+      logoutBtn.style.display = 'block';
+      
+      if (isAdmin) {
+        adminDashboardLink.style.display = 'block';
+      }
+    } else {
+      // User is not logged in
+      loginBtn.style.display = 'block';
+      signupBtn.style.display = 'block';
+      logoutBtn.style.display = 'none';
+      adminDashboardLink.style.display = 'none';
+    }
+  }
+
+  // Logout function
+  function logout() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('email');
+    localStorage.removeItem('isAdmin');
+    
+    // Show success message
+    alert('Logged out successfully!');
+    
+    // Update UI
+    checkAuthState();
+    
+    // Optionally redirect to home page
+    window.location.reload();
+  }
+
+  // Check authentication state when page loads
+  document.addEventListener('DOMContentLoaded', function() {
+    checkAuthState();
+  });
+
+  // Listen for storage changes (when user logs in/out in another tab)
+  window.addEventListener('storage', function(e) {
+    if (e.key === 'token') {
+      checkAuthState();
+    }
   });
 </script>
 
