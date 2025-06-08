@@ -1254,11 +1254,9 @@
   // Authentication state management
   function checkAuthState() {
     const token = localStorage.getItem('token');
-    const isAdmin = localStorage.getItem('isAdmin') === 'true';
     
     const loginBtn = document.getElementById('login-btn');
     const signupBtn = document.getElementById('signup-btn');
-    const adminDashboardLink = document.getElementById('admin-dashboard-link');
     const logoutBtn = document.getElementById('logout-btn');
     
     if (token) {
@@ -1266,16 +1264,11 @@
       loginBtn.style.display = 'none';
       signupBtn.style.display = 'none';
       logoutBtn.style.display = 'block';
-      
-      if (isAdmin) {
-        adminDashboardLink.style.display = 'block';
-      }
     } else {
       // User is not logged in
       loginBtn.style.display = 'block';
       signupBtn.style.display = 'block';
       logoutBtn.style.display = 'none';
-      adminDashboardLink.style.display = 'none';
     }
   }
 
