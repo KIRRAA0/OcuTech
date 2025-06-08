@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="icon" href="../images/logo.svg" >
+   <link rel="stylesheet" href="../component.css">   <link rel="stylesheet" href="./signup.css">
+   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+   <link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+   <title>Signup | OcuTech</title>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      
+            <div class="logo1">
+                <a href="https://new.deltauniv.edu.eg/ar/home/index" target="_blank" rel="noopener noreferrer">
+                  <img src="../images/logo/DT.png" alt="University">
+                </a>
+            </div>
+
+            <div class="headerlogo">
+              <a href="../index.html">
+                
+                <h1>O</h1>
+                <h1>c</h1>
+                <h1>u</h1>
+                <img src="../images/logo.svg">
+                <h1>T</h1>
+                <h1>e</h1>
+                <h1>c</h1>
+                <h1>h</h1>
+              </a>
+            </div>
+
+            <div class="uyuyu">
+
+
+              <div class="sign-up">
+                <div class="button"><a href="../login/login.html">Log In!</a></div>
+              </div>
+
+              <div class="menu">
+                <span class="menu-span top"></span>
+                <span class="menu-span middle"></span>
+                <span class="menu-span bottom"></span>
+            </div>
+
+            
+            </div>
+
+            <nav class="nav">
+              <a href="../index.html#About_us">About us</a>
+              <a href="../index.html#services">Service</a>
+              <a href="../market.html">Market</a>
+              <a href="../camera.html">Start Use</a>
+              <a href="../market.html#Contact">Contact</a>
+            </nav> 
+    </div>
+  </header>
+
+  <form id="signup-form" class="form">
+    <div class="flex-row">
+        <div>
+            <label class="e">First Name</label>
+              <div class="inputForm">
+                <svg height="20" width="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                  <path d="M12 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 12c-4.42 0-8 2.02-8 4.5V20a1 1 0 1 0 2 0v-1.5c0-1.4 3.14-3 6-3s6 1.6 6 3V20a1 1 0 1 0 2 0v-1.5c0-2.48-3.58-4.5-8-4.5z"/>
+                </svg>
+                <input type="text" class="input" id="fn" placeholder="Enter your First Name" required>
+              </div>
+        </div>
+        <div>
+              <label>Last Name</label>
+                <div class="inputForm">
+                  <svg height="20" width="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                    <path d="M12 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 12c-4.42 0-8 2.02-8 4.5V20a1 1 0 1 0 2 0v-1.5c0-1.4 3.14-3 6-3s6 1.6 6 3V20a1 1 0 1 0 2 0v-1.5c0-2.48-3.58-4.5-8-4.5z"/>
+                  </svg>
+                  <input type="text" class="input" id="ln" placeholder="Enter your Last Name" required>
+                </div>
+        </div>
+    </div>
+  
+    <div class="flex-column">
+      <label>Date of Birth</label>
+    </div>
+    <div class="inputForm">
+      <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+          <path d="M19 3h-1V1a1 1 0 1 0-2 0v2H8V1a1 1 0 1 0-2 0v2H5a3 3 0 0 0-3 3v14a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3zM5 5h14a1 1 0 0 1 1 1v2H4V6a1 1 0 0 1 1-1zm14 16H5a1 1 0 0 1-1-1V10h16v10a1 1 0 0 1-1 1z"/>
+      </svg>
+      <input type="number" class="input1" id="dd" placeholder="DD" required min="1" max="31" maxlength="2" oninput="this.value = this.value.slice(0, 2);">
+      <input type="number" class="input1" id="mm" placeholder="MM" required min="1" max="12" maxlength="2" oninput="this.value = this.value.slice(0, 2);">
+      <input type="number" class="input1" id="yy" placeholder="YYYY" required min="1920" max="2015" maxlength="4" oninput="this.value = this.value.slice(0, 4);">
+    </div>
+  
+    <div class="flex-column">
+      <label>Email</label>
+    </div>
+    <div class="inputForm">
+      <svg height="20" viewBox="0 0 32 32" width="20" xmlns="http://www.w3.org/2000/svg">
+        <g id="Layer_3" data-name="Layer 3">
+          <path fill="white" d="m30.853 13.87a15 15 0 0 0 -29.729 4.082 15.1 15.1 0 0 0 12.876 12.918 15.6 15.6 0 0 0 2.016.13 14.85 14.85 0 0 0 7.715-2.145 1 1 0 1 0 -1.031-1.711 13.007 13.007 0 1 1 5.458-6.529 2.149 2.149 0 0 1 -4.158-.759v-10.856a1 1 0 0 0 -2 0v1.726a8 8 0 1 0 .2 10.325 4.135 4.135 0 0 0 7.83.274 15.2 15.2 0 0 0 .823-7.455zm-14.853 8.13a6 6 0 1 1 6-6 6.006 6.006 0 0 1 -6 6z"/>
+        </g>
+      </svg>
+      <input type="email" class="input" id="email" placeholder="Enter your Email" required>
+    </div>
+  
+    <div class="flex-column">
+      <label>Password</label>
+    </div>
+    <div class="inputForm">
+      <svg height="20" viewBox="-64 0 512 512" width="20" xmlns="http://www.w3.org/2000/svg"><path fill="white" d="m336 512h-288c-26.453125 0-48-21.523438-48-48v-224c0-26.476562 21.546875-48 48-48h288c26.453125 0 48 21.523438 48 48v224c0 26.476562-21.546875 48-48 48zm-288-288c-8.8125 0-16 7.167969-16 16v224c0 8.832031 7.1875 16 16 16h288c8.8125 0 16-7.167969 16-16v-224c0-8.832031-7.1875-16-16-16zm0 0"></path><path fill="white" d="m304 224c-8.832031 0-16-7.167969-16-16v-80c0-52.929688-43.070312-96-96-96s-96 43.070312-96 96v80c0 8.832031-7.167969 16-16 16s-16-7.167969-16-16v-80c0-70.59375 57.40625-128 128-128s128 57.40625 128 128v80c0 8.832031-7.167969 16-16 16zm0 0"></path></svg>        
+      <input type="password" class="input" id="password" placeholder="Enter your Password" required>
+    </div>
+    
+    <div class="flex-row">
+      <div>
+        <input type="checkbox">
+        <label>Remember me</label>
+      </div>
+    </div>
+    
+    <button type="submit" class="button-submit">Sign Up</button>
+    <p class="p">Already have an account? <a href="../login/login.html" class="span">Log in</a></p>
+  </form>  
+  <script type="module">
+  document.addEventListener('DOMContentLoaded', () => {
+    const signupForm = document.getElementById('signup-form');
+    if (signupForm) {
+        signupForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Disable submit button to prevent double submission
+            const submitButton = document.querySelector('.button-submit');
+            submitButton.disabled = true;
+            submitButton.textContent = 'Creating Account...';
+            
+            const formData = {
+                email: document.getElementById('email').value,
+                password: document.getElementById('password').value,
+                firstName: document.getElementById('fn').value,
+                lastName: document.getElementById('ln').value,
+                dateOfBirth: `${document.getElementById('yy').value}-${
+                    String(document.getElementById('mm').value).padStart(2, '0')}-${
+                    String(document.getElementById('dd').value).padStart(2, '0')}`
+            };
+
+            try {
+                console.log('Sending signup request...', formData);
+                
+                const response = await fetch('http://127.0.0.1:8000/api/signup', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                console.log('Response status:', response.status);
+                console.log('Response headers:', response.headers);
+                
+                const data = await response.json();
+                console.log('Response data:', data);
+
+                if (response.ok) {
+                    alert('Account created successfully! تم إنشاء الحساب بنجاح');
+                    window.location.href = '../login/login.html';
+                } else {
+                    alert(data.detail || 'Error during registration حدث خطأ أثناء التسجيل');
+                }
+            } catch (error) {
+                console.error('Network Error:', error);
+                alert('Network connection error حدث خطأ في الاتصال بالخادم');
+            } finally {
+                // Re-enable submit button
+                submitButton.disabled = false;
+                submitButton.textContent = 'Sign Up';
+            }
+        });
+    }
+  });
+</script>
+<script>
+
+  // 🔄 التحقق من حالة المستخدم
+  window.addEventListener("DOMContentLoaded", () => {
+    const token = localStorage.getItem("token");
+    const email = localStorage.getItem("email");
+    const loginBtn = document.getElementById('login-btn');
+    const signupBtn = document.getElementById('signup-btn');
+    const adminLink = document.getElementById('admin-dashboard-link');
+
+    if (token && email) {
+      console.log('✅ مستخدم مسجل الدخول:', email);
+      if (signupBtn) signupBtn.style.display = 'none';
+      if (loginBtn) loginBtn.style.display = 'none';
+
+      const adminEmails = ["abdelrahmam.naggar2005@gmail.com"];
+      if (adminLink) {
+        adminLink.style.display = adminEmails.includes(email) ? 'block' : 'none';
+      }
+    } else {
+      console.log('❌ لا يوجد مستخدم مسجل');
+      if (signupBtn) signupBtn.style.display = 'block';
+      if (loginBtn) loginBtn.style.display = 'block';
+      if (adminLink) adminLink.style.display = 'none';
+    }
+  });
+</script>
+
+  <footer class="footer">
+    <div class="ocutech">
+      <img src="../images/logo.svg">
+      <p class="footer-title"><span>OcuTech</span></p>
+    </div>
+    <div class="connect">
+      <h2>Our Value</h2>
+      <a href="../index.html#About_us">About us</a>
+      <a href="../index.html#services">Service</a>
+      <a href="../market.html#Contact">Contact</a>
+    </div>
+    <div class="social-icons">
+      <h2>Follow us</h2>
+        <a href="https://www.facebook.com/deltauniv/"><i class="fa-brands fa-facebook-f"></i><p>Facebook</p></a>
+        <a href="https://www.instagram.com/deltauniversity?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fa-brands fa-instagram"></i><p>Instagram</p></a>
+        <a href="https://www.linkedin.com/school/delta-university-for-science-and-technology/"><i class="fa-brands fa-linkedin-in"></i><p>LinkedIn</p></a>
+    </div>
+    <div class="connect">
+      <h2>Get Connect</h2>
+      <p>(+20) 1017314060</p>
+      <p>abdelrahman.naggar2005@gmail.com</p>
+    </div>
+  </footer>
+
+<script src="../component.js"></script>
+<script type="module" src="../auth-ui.js"></script>
+
+<script>
+  ScrollReveal().reveal('.animate-on-scroll', {
+      delay: 200,
+      distance: '20px',
+      origin: 'bottom',
+      easing: 'ease-in-out',
+      interval: 100
+  });
+</script>
+
+
+</body>
+</html>
