@@ -96,7 +96,68 @@ This document details comprehensive improvements made to the OcuTech Eye-Based M
 
 \section{Issues Identified and Resolved}
 
-\subsection{Issue 1: Signup Form Conflicts}
+\subsection{Issue 1: Authentication State Management}
+
+\textbf{Enhancement:} Added comprehensive authentication state management to the home page navigation.
+
+\textbf{Implementation:}
+\begin{itemize}
+    \item Dynamic login/logout button visibility based on authentication status
+    \item Cross-tab authentication state synchronization
+    \item Admin dashboard access control
+    \item Responsive design for mobile devices
+\end{itemize}
+
+\textbf{Solution:}
+\begin{lstlisting}[language=JavaScript, caption=Authentication State Management]
+// Authentication state management
+function checkAuthState() {
+  const token = localStorage.getItem('token');
+  const isAdmin = localStorage.getItem('isAdmin') === 'true';
+  
+  const loginBtn = document.getElementById('login-btn');
+  const signupBtn = document.getElementById('signup-btn');
+  const adminDashboardLink = document.getElementById('admin-dashboard-link');
+  const logoutBtn = document.getElementById('logout-btn');
+  
+  if (token) {
+    // User is logged in
+    loginBtn.style.display = 'none';
+    signupBtn.style.display = 'none';
+    logoutBtn.style.display = 'block';
+    
+    if (isAdmin) {
+      adminDashboardLink.style.display = 'block';
+    }
+  } else {
+    // User is not logged in
+    loginBtn.style.display = 'block';
+    signupBtn.style.display = 'block';
+    logoutBtn.style.display = 'none';
+    adminDashboardLink.style.display = 'none';
+  }
+}
+
+// Logout function with proper cleanup
+function logout() {
+  localStorage.removeItem('token');
+  localStorage.removeItem('email');
+  localStorage.removeItem('isAdmin');
+  
+  alert('Logged out successfully!');
+  checkAuthState();
+  window.location.reload();
+}
+
+// Cross-tab synchronization
+window.addEventListener('storage', function(e) {
+  if (e.key === 'token') {
+    checkAuthState();
+  }
+});
+\end{lstlisting}
+
+\subsection{Issue 2: Signup Form Conflicts}
 
 \textbf{Problem:} Multiple JavaScript event handlers were attached to the signup form, causing conflicting messages and failed submissions.
 
@@ -158,7 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 \end{lstlisting}
 
-\subsection{Issue 2: JSON Parsing Errors}
+\subsection{Issue 3: JSON Parsing Errors}
 
 \textbf{Problem:} Frontend attempting to parse HTML error pages as JSON, causing "Unexpected token 'I', 'Internal S'..." errors.
 
@@ -202,7 +263,7 @@ async def validation_exception_handler(request: Request, exc: RequestValidationE
     )
 \end{lstlisting}
 
-\subsection{Issue 3: Database Error Handling}
+\subsection{Issue 4: Database Error Handling}
 
 \textbf{Enhancement:} Added comprehensive error handling to database operations.
 
@@ -227,6 +288,8 @@ def verify_user(email: str, password: str):
 \hline
 \textbf{File} & \textbf{Type} & \textbf{Changes Made} \\
 \hline
+\texttt{index.html} & Frontend & Added authentication state management, login/logout buttons, cross-tab sync \\
+\hline
 \texttt{signup.html} & Frontend & Fixed API URL, enhanced error handling, prevented double submission \\
 \hline
 \texttt{login.html} & Frontend & Added content-type validation, improved error messages \\
@@ -247,7 +310,7 @@ def verify_user(email: str, password: str):
 \hline
 \end{tabular}
 \caption{Summary of Modified Files}
-\end{table}
+\end{table>
 
 \section{Testing and Validation}
 
@@ -356,11 +419,14 @@ The OcuTech project has been significantly enhanced with robust error handling, 
 
 The implemented changes ensure:
 \begin{itemize}
-    \item Reliable user authentication
+    \item Reliable user authentication with dynamic UI updates
     \item Consistent JSON API responses
     \item Graceful error handling
     \item Improved debugging capabilities
-    \item Better user experience
+    \item Better user experience with intuitive navigation
+    \item Cross-tab authentication state synchronization
+    \item Responsive design for all devices
+    \item Proper session management and logout functionality
 \end{itemize}
 
 \vspace{1cm}

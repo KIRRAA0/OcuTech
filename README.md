@@ -14,8 +14,10 @@ An innovative web application that enables communication through eye movements a
 - **Morse Code Conversion**: Converts blink patterns to text
 - **Text-to-Speech**: Audio output for converted text
 - **User Authentication**: Secure login/signup system with JWT tokens
+- **Dynamic Navigation**: Smart login/logout buttons based on authentication state
 - **Admin Dashboard**: User management interface
 - **Real-time Processing**: WebSocket-based camera processing
+- **Cross-Tab Sync**: Authentication state synchronized across browser tabs
 
 ### Technical Features
 - **Computer Vision**: MediaPipe facial landmark detection
@@ -23,6 +25,21 @@ An innovative web application that enables communication through eye movements a
 - **Pattern Recognition**: Dot/dash pattern from blink duration
 - **Database Management**: SQLite with custom ORM
 - **Security**: bcrypt password hashing, JWT authentication
+- **State Management**: localStorage-based authentication state
+- **Responsive Design**: Mobile-friendly interface with adaptive navigation
+
+## 🌟 Key Features
+
+1. **Eye Movement Detection**: MediaPipe facial landmarks for precise tracking
+2. **Morse Code Conversion**: Real-time blink pattern analysis and translation
+3. **Smart Authentication**: JWT-based secure login/signup with dynamic UI
+4. **Adaptive Navigation**: Login/logout buttons that respond to authentication state
+5. **Real-time Processing**: WebSocket camera communication for instant feedback
+6. **Text-to-Speech**: Audio output for converted morse code messages
+7. **Admin Dashboard**: Comprehensive user management interface
+8. **Cross-Tab Synchronization**: Authentication state shared across browser tabs
+9. **Responsive Design**: Mobile-friendly interface that works on all devices
+10. **Session Management**: Secure logout with complete data cleanup
 
 ## 🎯 Use Cases
 
@@ -248,7 +265,14 @@ python main.py
 
 ## 📝 Changelog
 
-### Version 2.0.0 (Latest)
+### Version 2.1.0 (Latest)
+- ✅ Added dynamic authentication state management
+- ✅ Implemented smart login/logout button visibility
+- ✅ Added cross-tab authentication synchronization
+- ✅ Enhanced responsive design for mobile devices
+- ✅ Improved user experience with adaptive navigation
+
+### Version 2.0.0
 - ✅ Fixed signup form conflicts
 - ✅ Enhanced error handling
 - ✅ Improved JSON response consistency
